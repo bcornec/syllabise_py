@@ -1,12 +1,45 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""Package of usefull functions to syllabise word in french.
 
-"""Preprocess."""
+This file needs a constants.yaml file containing:
+    - a list named vowel containing your vowel
+    - a list named consonnant containing your consonnant
+    - a dictionnary named exeption containing as key some letters and as value
+    a V or a C
+"""
 import re
-import file as fl
 import sys
+import yaml
 
-DICT_CONST = fl.open_yml('./constants.yaml')
+
+def open_yml(path):
+    """Return a dict form a yml file.
+
+    :param path: path to a yml file
+    :type path: str
+    :return: dictionnary corresponding at yml file
+    :rtype: dict
+    """
+    returned_dic = {}
+    with open(path, 'r') as stream:
+        returned_dic = yaml.load(stream)
+    return returned_dic
+
+
+def create_yml(path, data):
+    """Create yml file from a dict.
+
+    :param path: path to a yml file to create
+    :type path: str
+    :param data: dictionnary of variable
+    :type data: dict
+    """
+    with open(path, 'w') as outfile:
+        yaml.dump(data, outfile, default_flow_style=False)
+
+
+DICT_CONST = open_yml('./constants.yaml')
 VOWEL = DICT_CONST['vowel']
 NO_E_VOWEL = VOWEL.copy()
 NO_E_VOWEL.remove('e')
@@ -15,12 +48,12 @@ CONSONNANT = DICT_CONST['consonnant']
 
 
 def list_letters_and_exceptions(word):
-    """Return
+    """Return a transformed word split into letters and exeptions.
 
     :param word: a word
     :type word: str
-    :return: list of
-    :rtype: list()
+    :return: list of letters and exeptions
+    :rtype: list
     """
     letters_and_exceptions = []
     w = word
@@ -49,12 +82,12 @@ def list_letters_and_exceptions(word):
 
 
 def transform_cv(list_let_exc):
-    """Return
+    """Return a list of C and V using list of letters and exeptions.
 
-    :param word: a word
-    :type word: str
-    :return: list of
-    :rtype: list()
+    :param list_let_exc: list of letters and exeptions
+    :type list_let_exc: list
+    :return: list of C and V tags
+    :rtype: list
     """
     return [EXEPTION[let_exc] if let_exc in EXEPTION else
             'V' if let_exc in VOWEL else
@@ -63,12 +96,12 @@ def transform_cv(list_let_exc):
 
 
 def get_syllabe_cv(list_cv):
-    """Return
+    """Return list of grouped C and V tags using list of C and V tags.
 
-    :param word: a word
-    :type word: str
-    :return: list of
-    :rtype: list()
+    :param list_cv: list of C and V tags
+    :type list_cv: list
+    :return: list of grouped C and V tags
+    :rtype: list
     """
     temp = [''.join(x) for x in re.findall(r'C*VC*', ''.join(list_cv))]
     syllabe_cv = []
@@ -81,24 +114,12 @@ def get_syllabe_cv(list_cv):
     return syllabe_cv
 
 
-def get_syllabe(syllabe_cv, list_let_exc):
-    """Return
-
-    :param word: a word
-    :type word: str
-    :return: list of
-    :rtype: list()
-    """
-    return [[list_let_exc.pop(0) for _ in range(len(scv))]
-            for scv in syllabe_cv]
-
-
 def syllabise_word(word):
-    """Return
+    """Return list of syllabe of a word.
 
     :param word: a word
     :type word: str
-    :return: list of
+    :return: list of syllabe
     :rtype: list()
     """
     list_let_exc = list_letters_and_exceptions(word)
@@ -113,7 +134,7 @@ def syllabise_word(word):
     return d
 
 
-def main():
+if __name__ == '__main__':
     if len(sys.argv) == 1:
         print('usage: ./syllabe.py WORD [WORD [...]]')
     else:
@@ -121,8 +142,3 @@ def main():
         for words in argv:
             for word in words.split():
                 print('{} => {}'.format(word, str(syllabise_word(word))))
-    return 0
-
-
-if __name__ == '__main__':
-    main()

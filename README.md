@@ -1,9 +1,53 @@
-# Private use of building function syllabise of PAM
-# Syllabation des groupes de consonnes
+# Syllabise_py
+Pour un usage privé de la fonction de syllabise du PAM
+
+## Pre-requis
+
+L'environnement de cette fonction est `python3`. Le module `yaml` est nécessaire pour l'exécution il faut dont installer le package `PyYAML`:
+```
+pip install PyYAML
+```
+ou
+```
+pip3 install PyYAML
+```
+
+## Lancement
+
+Rendez votre fichier executable:
+```
+chmod +x syllabise.py
+```
+Puis vous pouvez lancer le script avec les commandes suivantes:
+```
+./syllabise.py syllabation
+```
+ou
+```
+python3 syllabise.py syllabation
+```
+
+## Example
+
+Deux examples de retours:
+
+```
+$> ./syllabise.py syllabation
+syllabation => ['syl', 'la', 'ba', 'ti', 'on']
+$> ./syllabise.py syllabation "je suis une phrase"
+syllabation => ['syl', 'la', 'ba', 'ti', 'on']
+je => ['je']
+suis => ['suis']
+une => ['u', 'ne']
+phrase => ['phra', 'se']
+```
+
+---
+# Théorie de la syllabation des groupes de consonnes
 
 ## Introduction : types de groupes de consonnes
-Un groupe de deux consonnes doit être (a) ou (b) :
-- tautosyllabique (=homo-organique)
+Un groupe de deux consonnes doit être (1) ou (2) :
+1. tautosyllabique (=homo-organique)
 - hétérosyllabique (=hétéro-organique)
 
 Cela signifie que dans la suite CC, la coupure syllabique ('.') peut tomber entre C et C : (C.C), après les deux CC (CC.) ou avant celle-ci (.CC).

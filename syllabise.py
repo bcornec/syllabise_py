@@ -125,13 +125,13 @@ def syllabise_word(word):
     list_let_exc = list_letters_and_exceptions(word)
     list_cv = transform_cv(list_let_exc)
     syllabe_cv = get_syllabe_cv(list_cv)
-    d = []
-    for c in syllabe_cv:
-        e = []
-        for _ in range(len(c)):
-            e.append(list_let_exc.pop(0))
-        d.append("".join(e))
-    return d
+    syllabes = []
+    for cv in syllabe_cv:
+        syll = []
+        for _ in range(len(cv)):
+            syll.append(list_let_exc.pop(0))
+        syllabes.append("".join(syll))
+    return syllabes
 
 
 if __name__ == '__main__':

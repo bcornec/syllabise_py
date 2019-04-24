@@ -67,7 +67,7 @@ syllabation/ => ['sy', 'lla', 'ba', 'tion', '/']
 
 Toutes améliorations est la bienvenue pour une syllabation générique.
 
-__N'hésitey pas à soumettre des issues.__
+__N'hésitez pas à soumettre des issues.__
 
 ---
 # Théorie de la syllabation des groupes de consonnes
@@ -75,7 +75,7 @@ __N'hésitey pas à soumettre des issues.__
 ## Introduction : types de groupes de consonnes
 Un groupe de deux consonnes doit être (1) ou (2) :
 1. tautosyllabique (=homo-organique)
-- hétérosyllabique (=hétéro-organique)
+2. hétérosyllabique (=hétéro-organique)
 
 Cela signifie que dans la suite CC, la coupure syllabique ('.') peut tomber entre C et C : (C.C), après les deux CC (CC.) ou avant celle-ci (.CC).
 

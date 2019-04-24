@@ -1,5 +1,5 @@
 # Syllabise_py
-Pour un usage privé de la fonction de syllabise du PAM
+Pour un usage spécifique de la fonction de syllabise_word du PAM
 
 ## Pre-requis
 
@@ -41,6 +41,33 @@ suis => ['suis']
 une => ['u', 'ne']
 phrase => ['phra', 'se']
 ```
+
+## Mauvaises syllabations
+
+Changer le fichier `canstants.yaml` à votre convenance:
+```
+vowel:
+  - /
+  - à
+  [...]
+exeption:
+  [...]
+  on: V
+  ll: C
+  ion: V
+  gn: C
+
+```
+Cela vous donnera:
+```
+$> ./syllabise.py syllabation/
+syllabation/ => ['sy', 'lla', 'ba', 'tion', '/']
+
+```
+
+Toutes améliorations est la bienvenue pour une syllabation générique.
+
+__N'hésitey pas à soumettre des issues.__
 
 ---
 # Théorie de la syllabation des groupes de consonnes

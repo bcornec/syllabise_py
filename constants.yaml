@@ -22,8 +22,6 @@ vowel:
  - ö
  - ä
  - y
- - ə
- - ʰ
 
 consonnant:
  - q
@@ -46,9 +44,6 @@ consonnant:
  - n
  - m
  - b
- - ι
- - F
- - υ
  - ç
 
 exeption:
@@ -63,7 +58,6 @@ exeption:
   ay: V
   oeil: V
   au: V
-  Fèel: V
   qu: C
   ou: V
   ch: C
@@ -82,85 +76,10 @@ exeption:
   ent: V
   es: V
   vient: V
-  viënt: V
   tient: V
-  tiënt: V
   tiens: V
-  tïens: V
   iau: V
   eau: V
   eaz: V
   oeu: V
   eax: V
-  ʰa: V
-  ʰe: V
-  ʰi: V
-  ʰu: V
-  ʰo: V
-  ʰy: V
-  ʰä: V
-  ʰë: V
-  ʰü: V
-  ʰï: V
-  ʰö: V
-
-ier:
-  - vr
-  - rg
-  - ch
-  - tr
-  - rr
-  - ll
-  - pp
-  - lc
-  - mc
-  - sc
-  - gn
-  - ss
-  - sn
-  - st
-  - nd
-  - nb
-  - nc
-  - nf
-  - nh
-  - ng
-  - nj
-  - nk
-  - nl
-  - nm
-  - np
-  - nq
-  - nr
-  - ns
-  - nt
-  - nv
-  - nw
-  - nx
-  - nz
-  - md
-  - mb
-  - mc
-  - mf
-  - mh
-  - mg
-  - mj
-  - mk
-  - ml
-  - mm
-  - mp
-  - mq
-  - mr
-  - ms
-  - mt
-  - mv
-  - mw
-  - mx
-  - mz
-  - rt
-  - rc
-  - h
-  - l
-  - gl
-  - gr
-  - nn

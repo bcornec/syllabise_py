@@ -93,7 +93,7 @@ def get_syllabe(syllabe_cv, list_let_exc):
             for scv in syllabe_cv]
 
 
-def sylabise_word(word):
+def syllabise_word(word):
     """Return
 
     :param word: a word
@@ -115,12 +115,12 @@ def sylabise_word(word):
 
 def main():
     if len(sys.argv) == 1:
-        print('usage: ./sylabe.py WORD [WORD [...]]')
+        print('usage: ./syllabe.py WORD [WORD [...]]')
     else:
         argv = sys.argv[1:]
         for words in argv:
             for word in words.split():
-                print('{} => {}'.format(word, str(sylabise_word(word))))
+                print('{} => {}'.format(word, str(syllabise_word(word))))
     return 0
 
 

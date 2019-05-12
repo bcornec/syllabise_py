@@ -50,6 +50,9 @@ CONSONNANT = DICT_CONST['consonnant']
 def list_letters_and_exceptions(word):
     """Return a transformed word split into letters and exeptions.
 
+    Read constants.yaml where are located exceptions, as entiere words or
+    groups like TR, DR, diphtongs, etc.
+
     :param word: a word
     :type word: str
     :return: list of letters and exeptions
@@ -98,6 +101,10 @@ def transform_cv(list_let_exc):
 def get_syllabe_cv(list_cv):
     """Return list of grouped C and V tags using list of C and V tags.
 
+    Intend to respect the Maximal Onset Principle without overloading codas
+        - VCV > V.CV
+        - VCCV > VC.CV (TR and his buddies are already taking in account))
+
     :param list_cv: list of C and V tags
     :type list_cv: list
     :return: list of grouped C and V tags
@@ -136,7 +143,7 @@ def syllabise_word(word):
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
-        print('usage: ./syllabe.py WORD [WORD [...]]')
+        print('usage: ./syllabise.py WORD [WORD [...]]')
     else:
         argv = sys.argv[1:]
         for words in argv:

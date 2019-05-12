@@ -14,11 +14,11 @@ pip3 install PyYAML
 
 ## Lancement
 
-Rendez votre fichier executable:
+Rendez votre fichier exécutable:
 ```
 chmod +x syllabise.py
 ```
-Puis vous pouvez lancer le script avec les commandes suivantes:
+Lancez le script avec les commandes suivantes:
 ```
 ./syllabise.py syllabation
 ```
@@ -42,9 +42,9 @@ une => ['u', 'ne']
 phrase => ['phra', 'se']
 ```
 
-## Mauvaises syllabations
+## Utilisation des exceptions
 
-Changer le fichier `canstants.yaml` à votre convenance:
+Changez le fichier `constants.yaml` à votre convenance:
 ```
 vowel:
   - /
@@ -58,14 +58,14 @@ exeption:
   gn: C
 
 ```
-Cela vous donnera:
+Cela vous donnera :
 ```
 $> ./syllabise.py syllabation/
 syllabation/ => ['sy', 'lla', 'ba', 'tion', '/']
 
 ```
 
-Toutes améliorations est la bienvenue pour une syllabation générique.
+Toute amélioration est la bienvenue pour une syllabation générique.
 
 __N'hésitez pas à soumettre des issues.__
 
